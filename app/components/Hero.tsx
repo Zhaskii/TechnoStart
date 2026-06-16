@@ -2,8 +2,12 @@
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-white text-slate-900">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-20 sm:px-8 lg:py-32">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-b from-slate-50 to-white text-slate-900">
+      {/* Subtle accent lines */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-50/40 rounded-full blur-3xl -z-10" />
+      
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-20 sm:px-8 lg:py-32 relative z-10">
         <div className="max-w-2xl">
           <h1 className="text-5xl font-bold leading-tight sm:text-6xl">
             Build Your Digital Presence
@@ -47,24 +51,24 @@ export default function Hero() {
         </div>
 
         <div className="hidden lg:block">
-          <div className="rounded-lg bg-gradient-to-br from-blue-100 to-blue-50 p-12 w-96">
-            <h3 className="text-2xl font-bold mb-4">Why Choose Us?</h3>
-            <ul className="space-y-3 text-sm text-slate-700">
+          <div className="rounded-xl border border-blue-200 bg-white p-8 w-96 shadow-sm">
+            <h3 className="text-2xl font-bold mb-6 text-slate-900">Why Choose Us?</h3>
+            <ul className="space-y-4 text-sm">
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">✓</span>
-                <span>Proven track record of successful projects</span>
+                <span className="text-blue-600 font-bold flex-shrink-0 mt-0.5">✓</span>
+                <span className="text-slate-700">Proven track record of successful projects</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">✓</span>
-                <span>Expert team of developers and marketers</span>
+                <span className="text-blue-600 font-bold flex-shrink-0 mt-0.5">✓</span>
+                <span className="text-slate-700">Expert team of developers and marketers</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">✓</span>
-                <span>Transparent communication and results</span>
+                <span className="text-blue-600 font-bold flex-shrink-0 mt-0.5">✓</span>
+                <span className="text-slate-700">Transparent communication and results</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">✓</span>
-                <span>Affordable pricing with no hidden costs</span>
+                <span className="text-blue-600 font-bold flex-shrink-0 mt-0.5">✓</span>
+                <span className="text-slate-700">Affordable pricing with no hidden costs</span>
               </li>
             </ul>
           </div>
