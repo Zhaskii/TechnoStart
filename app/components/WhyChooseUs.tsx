@@ -51,6 +51,7 @@ export const WhyChooseUs: React.FC = () => {
     );
 
     // 2. Trust Reason Cards Animation (Staggered entrance)
+    // Optimized with force3D and clearProps to eliminate transform pipeline stuttering
     gsap.fromTo(
       ".choose-card-anim",
       {
@@ -63,6 +64,8 @@ export const WhyChooseUs: React.FC = () => {
         duration: 0.8,
         stagger: 0.15,
         ease: "power2.out",
+        force3D: true,
+        clearProps: "transform",
         scrollTrigger: {
           trigger: ".choose-cards-trigger",
           start: "top 78%",
@@ -113,7 +116,7 @@ export const WhyChooseUs: React.FC = () => {
 
           <h2 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl choose-header-anim opacity-0">
             Why Businesses Trust
-            <span className="block text-blue-600">Techno Start</span>
+            <span className="block text-blue-600">Techno Star</span>
           </h2>
 
           <p className="mt-6 text-lg leading-relaxed text-slate-600 choose-header-anim opacity-0">
@@ -123,11 +126,12 @@ export const WhyChooseUs: React.FC = () => {
         </div>
 
         {/* Cards */}
+        {/* Fixed: Replaced translation latency filters. Bound hover updates strictly to explicit design parameters */}
         <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3 choose-cards-trigger">
           {reasons.map((item, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-xl choose-card-anim opacity-0"
+              className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm will-change-transform transition-[border-color,box-shadow,transform] duration-300 transform-gpu hover:-translate-y-2 hover:border-blue-200 hover:shadow-xl choose-card-anim opacity-0"
             >
               {/* Number */}
               <div className="absolute right-6 top-4 text-6xl font-black text-slate-100 select-none">
@@ -135,7 +139,7 @@ export const WhyChooseUs: React.FC = () => {
               </div>
 
               {/* Icon */}
-              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-colors duration-300 group-hover:bg-blue-600 group-hover:text-white">
                 {item.icon}
               </div>
 

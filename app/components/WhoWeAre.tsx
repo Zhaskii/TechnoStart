@@ -91,7 +91,7 @@ export const WhoWeAre: React.FC = () => {
         {/* Header (Trigger Container) */}
         <div className="text-center max-w-3xl mx-auto about-header-trigger">
           <span className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-600 about-header-anim opacity-0">
-            About Techno Start
+            About Techno Star
           </span>
 
           <h2 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl about-header-anim opacity-0">

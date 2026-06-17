@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Techno Start | Web Development & Digital Marketing Company in Nepal",
+  title: "Techno Star | Web Development & Digital Marketing Company in Nepal",
   description:
-    "Techno Start is a Nepal-based IT solutions company specializing in professional web development, SEO optimization, and digital marketing services. We help businesses establish a strong online presence and achieve sustainable growth.",
+    "Techno Star is a Nepal-based IT solutions company specializing in professional web development, SEO optimization, and digital marketing services. We help businesses establish a strong online presence and achieve sustainable growth.",
   keywords: [
-    "Techno Start",
+    "Techno Star",
     "IT Company Nepal",
     "Web Development Nepal",
     "Website Design Nepal",
@@ -32,22 +32,20 @@ export const metadata: Metadata = {
     "Digital Agency Nepal",
     "Online Marketing Nepal",
   ],
-  authors: [{ name: "Techno Start" }],
-  creator: "Techno Start",
-  publisher: "Techno Start",
+  authors: [{ name: "Techno Star" }],
+  creator: "Techno Star",
+  publisher: "Techno Star",
   openGraph: {
-    title:
-      "Techno Start | Web Development & Digital Marketing Company in Nepal",
+    title: "Techno Star | Web Development & Digital Marketing Company in Nepal",
     description:
       "Professional web development, SEO, and digital marketing solutions for businesses in Nepal.",
-    siteName: "Techno Start",
+    siteName: "Techno Star",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Techno Start | Web Development & Digital Marketing Company in Nepal",
+    title: "Techno Star | Web Development & Digital Marketing Company in Nepal",
     description:
       "Professional web development, SEO, and digital marketing solutions for businesses in Nepal.",
   },

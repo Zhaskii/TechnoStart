@@ -12,7 +12,7 @@ if (typeof window !== "undefined") {
 const testimonials = [
   {
     quote:
-      "Techno Start transformed our online presence and delivered a website that perfectly represents our brand.",
+      "Techno Star transformed our online presence and delivered a website that perfectly represents our brand.",
     author: "Priya Sharma",
     role: "CEO",
     company: "RetailCo",

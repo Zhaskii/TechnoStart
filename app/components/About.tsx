@@ -191,7 +191,7 @@ export default function About() {
             <h1 className="text-5xl sm:text-6xl font-black tracking-tight text-white leading-none mb-6 about-hero-anim opacity-0">
               About{" "}
               <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-                Techno Start
+                Techno Star
               </span>
             </h1>
             <p className="text-lg text-slate-400 leading-relaxed max-w-xl mx-auto about-hero-anim opacity-0">
