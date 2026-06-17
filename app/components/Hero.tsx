@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { StaticImageData } from "next/image";
 
 const SERVICES = ["Web Development", "SEO", "Google Ads", "Social Media"];
 
@@ -11,7 +12,12 @@ const STATS = [
   { value: "48h", label: "Project kickoff" },
 ];
 
-export default function Hero() {
+interface HeroProps {
+  bgImage?: StaticImageData | string;
+  bgOverlayOpacity?: number;
+}
+
+export default function Hero({ bgImage, bgOverlayOpacity = 0.6 }: HeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,11 +42,29 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
+  const bgImageUrl = typeof bgImage === "string" ? bgImage : bgImage?.src;
+
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen overflow-hidden bg-[#0D0D0D] text-white"
+      className="relative min-h-screen overflow-hidden text-white"
+      style={{
+        backgroundImage: bgImageUrl ? `url(${bgImageUrl})` : "none",
+        backgroundColor: bgImageUrl ? "transparent" : "#0D0D0D",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
+      {/* Dark overlay for background image */}
+      {bgImageUrl && (
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundColor: `rgba(13, 13, 13, ${bgOverlayOpacity})`,
+          }}
+        />
+      )}
+
       {/* Faint dot grid */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -54,7 +78,7 @@ export default function Hero() {
       {/* Blue brand glow */}
       <div className="pointer-events-none absolute -top-20 right-0 h-[360px] w-[360px] rounded-full bg-blue-600/20 blur-[100px]" />
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-24 lg:px-8">
+      <div className="relative z-20 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-24 lg:px-8">
         <div className="grid w-full items-center gap-14 lg:grid-cols-2 lg:gap-10">
           {/* ── LEFT ── */}
           <div className="hero-content flex flex-col items-start">
