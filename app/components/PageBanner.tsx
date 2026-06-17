@@ -2,13 +2,14 @@
 
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
+import { StaticImageData } from "next/image";
 
 interface PageBannerProps {
   badgeText: string;
   title: string;
   subtitle: string;
   bgGlowColor?: "blue" | "indigo";
-  bgImage?: string;
+  bgImage?: StaticImageData | string;
   bgOverlayOpacity?: number;
 }
 
@@ -34,16 +35,18 @@ export default function PageBanner({
     );
   }, []);
 
+  const bgImageUrl = typeof bgImage === "string" ? bgImage : bgImage?.src;
+
   return (
     <section 
       className="relative py-24 lg:py-32 overflow-hidden bg-cover bg-center"
       style={{
-        backgroundImage: bgImage ? `url(${bgImage})` : "none",
-        backgroundColor: bgImage ? "transparent" : "#060816",
+        backgroundImage: bgImageUrl ? `url(${bgImageUrl})` : "none",
+        backgroundColor: bgImageUrl ? "transparent" : "#060816",
       }}
     >
       {/* Dark overlay for background image */}
-      {bgImage && (
+      {bgImageUrl && (
         <div 
           className="absolute inset-0"
           style={{
