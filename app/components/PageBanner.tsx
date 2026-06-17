@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
+import { gsap } from "gsap";
 
 interface PageBannerProps {
   badgeText: string;
@@ -18,6 +21,15 @@ export default function PageBanner({
     indigo: "bg-indigo-500/10",
   };
 
+  useEffect(() => {
+    // Animate banner elements on mount
+    gsap.fromTo(
+      ".page-banner-anim",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power2.out" }
+    );
+  }, []);
+
   return (
     <section className="relative py-24 lg:py-32 bg-[#060816] overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
@@ -26,13 +38,13 @@ export default function PageBanner({
         />
       </div>
       <div className="relative max-w-3xl mx-auto px-4 text-center">
-        <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-400 mb-6 opacity-0 animate-in fade-in slide-in-from-bottom-3 duration-500">
+        <span className="page-banner-anim inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-400 mb-6 opacity-0">
           {badgeText}
         </span>
-        <h1 className="text-5xl sm:text-6xl font-black tracking-tight text-white mb-6 opacity-0 animate-in fade-in slide-in-from-bottom-3 duration-500 delay-100">
+        <h1 className="page-banner-anim text-5xl sm:text-6xl font-black tracking-tight text-white leading-none mb-6 opacity-0">
           {title}
         </h1>
-        <p className="text-lg text-slate-400 leading-relaxed max-w-xl mx-auto opacity-0 animate-in fade-in slide-in-from-bottom-3 duration-500 delay-200">
+        <p className="page-banner-anim text-lg text-slate-400 leading-relaxed max-w-xl mx-auto opacity-0">
           {subtitle}
         </p>
       </div>
