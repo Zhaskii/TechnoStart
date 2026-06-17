@@ -8,6 +8,8 @@ interface PageBannerProps {
   title: string;
   subtitle: string;
   bgGlowColor?: "blue" | "indigo";
+  bgImage?: string;
+  bgOverlayOpacity?: number;
 }
 
 export default function PageBanner({
@@ -15,6 +17,8 @@ export default function PageBanner({
   title,
   subtitle,
   bgGlowColor = "blue",
+  bgImage,
+  bgOverlayOpacity = 0.7,
 }: PageBannerProps) {
   const glowClasses = {
     blue: "bg-blue-500/10",
@@ -31,13 +35,29 @@ export default function PageBanner({
   }, []);
 
   return (
-    <section className="relative py-24 lg:py-32 bg-[#060816] overflow-hidden">
+    <section 
+      className="relative py-24 lg:py-32 overflow-hidden bg-cover bg-center"
+      style={{
+        backgroundImage: bgImage ? `url(${bgImage})` : "none",
+        backgroundColor: bgImage ? "transparent" : "#060816",
+      }}
+    >
+      {/* Dark overlay for background image */}
+      {bgImage && (
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundColor: `rgba(6, 8, 22, ${bgOverlayOpacity})`,
+          }}
+        />
+      )}
+
       <div className="pointer-events-none absolute inset-0">
         <div
           className={`absolute top-0 left-1/2 -translate-x-1/2 w-[600px] lg:w-[800px] h-64 lg:h-80 ${glowClasses[bgGlowColor]} blur-3xl rounded-full`}
         />
       </div>
-      <div className="relative max-w-3xl mx-auto px-4 text-center">
+      <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
         <span className="page-banner-anim inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-400 mb-6 opacity-0">
           {badgeText}
         </span>
