@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2 } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import PageBanner from "./PageBanner";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -29,13 +30,6 @@ export default function Contact() {
   });
 
   useEffect(() => {
-    // 1. Hero Content Entrance (Plays instantly on mount)
-    gsap.fromTo(
-      ".contact-hero-anim",
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power2.out" },
-    );
-
     // 2. Main Layout Grid Elements Reveal
     gsap.fromTo(
       ".contact-grid-wrapper",
@@ -110,25 +104,12 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-500 selection:text-white">
       <main>
-        {/* ── HERO SECTION ── */}
-        <section className="relative py-24 lg:py-32 bg-[#060816] overflow-hidden">
-          <div className="pointer-events-none absolute inset-0">
-            {/* Soft tech ambient ambient glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-72 bg-indigo-500/10 blur-3xl rounded-full" />
-          </div>
-          <div className="relative max-w-3xl mx-auto px-4 text-center">
-            <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-400 mb-6 contact-hero-anim opacity-0">
-              Connect
-            </span>
-            <h1 className="text-5xl sm:text-6xl font-black tracking-tight text-white mb-6 contact-hero-anim opacity-0">
-              Contact Us
-            </h1>
-            <p className="text-lg text-slate-400 leading-relaxed max-w-xl mx-auto contact-hero-anim opacity-0">
-              Reach out for a consultation or custom quote. We typically respond
-              within one business day.
-            </p>
-          </div>
-        </section>
+        <PageBanner
+          badgeText="Connect"
+          title="Contact Us"
+          subtitle="Reach out for a consultation or custom quote. We typically respond within one business day."
+          bgGlowColor="indigo"
+        />
 
         {/* ── CONTACT GRID & DETAILS ── */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 -mt-10 relative z-10 contact-grid-trigger">

@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import PageBanner from "./PageBanner";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -118,13 +119,6 @@ export default function ServiceDetails() {
   ];
 
   useEffect(() => {
-    // 1. Hero Content Entrance (Triggers instantly on mounting phase)
-    gsap.fromTo(
-      ".services-hero-anim",
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power2.out" },
-    );
-
     // 2. Web Development Section Header reveal
     gsap.fromTo(
       ".web-header-anim",
@@ -216,26 +210,12 @@ export default function ServiceDetails() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-500 selection:text-white">
       <main>
-        {/* ── HERO SECTION ── */}
-        <section className="relative py-24 lg:py-32 bg-[#060816] overflow-hidden">
-          <div className="pointer-events-none absolute inset-0">
-            {/* Soft digital brand ambient glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-80 bg-blue-500/10 blur-3xl rounded-full" />
-          </div>
-          <div className="relative max-w-3xl mx-auto px-4 text-center">
-            <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-400 mb-6 services-hero-anim opacity-0">
-              Our Expertise
-            </span>
-            <h1 className="text-5xl sm:text-6xl font-black tracking-tight text-white mb-6 services-hero-anim opacity-0">
-              Our Services
-            </h1>
-            <p className="text-lg text-slate-400 leading-relaxed max-w-xl mx-auto services-hero-anim opacity-0">
-              We deliver complete digital strategies designed to accelerate
-              corporate scale: from modern codebase architectures to custom
-              marketing engines.
-            </p>
-          </div>
-        </section>
+        <PageBanner
+          badgeText="Our Expertise"
+          title="Our Services"
+          subtitle="We deliver complete digital strategies designed to accelerate corporate scale: from modern codebase architectures to custom marketing engines."
+          bgGlowColor="blue"
+        />
 
         {/* ── SECTION 1: WEBSITE DEVELOPMENT ── */}
         <section
