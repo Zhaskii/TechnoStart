@@ -81,100 +81,190 @@ export const WhoWeAre: React.FC = () => {
   }, []);
 
   return (
-    <section id="about" className="relative overflow-hidden bg-white py-24">
-      {/* Background Glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-72 w-72 rounded-full bg-blue-100/40 blur-3xl" />
+    <section
+      id="about"
+      className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50 py-32"
+    >
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 h-80 w-80 rounded-full bg-blue-400/5 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-indigo-400/5 blur-3xl" />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
-        {/* Header (Trigger Container) */}
-        <div className="text-center max-w-3xl mx-auto about-header-trigger">
-          <span className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-600 about-header-anim opacity-0">
-            About Techno Star
-          </span>
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Header Section */}
+        <div className="text-center max-w-4xl mx-auto about-header-trigger mb-20">
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/50 bg-blue-50/50 backdrop-blur-sm px-4 py-2 mb-8 about-header-anim opacity-0">
+            <div className="h-2 w-2 rounded-full bg-blue-500" />
+            <span className="text-sm font-semibold text-blue-700">
+              About Techno Star
+            </span>
+          </div>
 
-          <h2 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl about-header-anim opacity-0">
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight about-header-anim opacity-0">
             Building Digital Experiences{" "}
-            <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
               That Drive Business Growth
             </span>
           </h2>
 
-          <p className="mt-6 text-lg leading-relaxed text-slate-500 about-header-anim opacity-0">
+          <p className="text-lg md:text-xl leading-relaxed text-slate-600 max-w-2xl mx-auto about-header-anim opacity-0">
             We are a forward-thinking IT company helping businesses establish a
             strong digital presence through modern websites, strategic SEO, and
-            result-driven digital marketing solutions.
+            result-driven digital marketing solutions that transform vision into
+            reality.
           </p>
         </div>
 
-        {/* Feature Cards */}
-        <div className="mt-16 grid gap-6 md:grid-cols-3 about-cards-trigger">
+        {/* Feature Cards Grid */}
+        <div className="grid gap-8 md:grid-cols-3 about-cards-trigger mb-20">
           {/* Card 1: Web Development */}
           <div className="about-card-wrapper opacity-0 will-change-transform">
-            <div className="group h-full rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600">
-                <Code2 size={28} />
+            <div className="group relative h-full rounded-2xl border border-slate-200/50 bg-white/80 backdrop-blur-sm p-10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+              {/* Gradient background on hover */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{
+                  background:
+                    "radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent)",
+                }}
+              />
+
+              <div className="relative z-10">
+                <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 text-blue-600 group-hover:scale-110 transition-transform duration-300">
+                  <Code2 size={32} />
+                </div>
+
+                <h3 className="mt-8 text-2xl font-bold text-slate-900">
+                  Web Development
+                </h3>
+
+                <p className="mt-4 text-base leading-relaxed text-slate-600">
+                  Fast, responsive, and scalable websites built with modern
+                  technologies to help your business stand out in the digital
+                  landscape.
+                </p>
+
+                <div className="mt-6 inline-flex items-center gap-2 text-blue-600 font-semibold text-sm group-hover:gap-3 transition-all">
+                  Learn more <span>→</span>
+                </div>
               </div>
-
-              <h3 className="mt-6 text-xl font-semibold text-slate-900">
-                Web Development
-              </h3>
-
-              <p className="mt-3 text-slate-500 leading-relaxed">
-                Fast, responsive, and scalable websites built with modern
-                technologies to help your business stand out.
-              </p>
             </div>
           </div>
 
           {/* Card 2: SEO Optimization */}
           <div className="about-card-wrapper opacity-0 will-change-transform">
-            <div className="group h-full rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-50 text-violet-600">
-                <Search size={28} />
+            <div className="group relative h-full rounded-2xl border border-slate-200/50 bg-white/80 backdrop-blur-sm p-10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+              {/* Gradient background on hover */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{
+                  background:
+                    "radial-gradient(circle at top right, rgba(167, 139, 250, 0.1), transparent)",
+                }}
+              />
+
+              <div className="relative z-10">
+                <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-50 to-violet-100 text-violet-600 group-hover:scale-110 transition-transform duration-300">
+                  <Search size={32} />
+                </div>
+
+                <h3 className="mt-8 text-2xl font-bold text-slate-900">
+                  SEO Optimization
+                </h3>
+
+                <p className="mt-4 text-base leading-relaxed text-slate-600">
+                  Improve search visibility and attract high-intent visitors
+                  through effective, data-backed SEO strategies that drive
+                  results.
+                </p>
+
+                <div className="mt-6 inline-flex items-center gap-2 text-violet-600 font-semibold text-sm group-hover:gap-3 transition-all">
+                  Learn more <span>→</span>
+                </div>
               </div>
-
-              <h3 className="mt-6 text-xl font-semibold text-slate-900">
-                SEO Optimization
-              </h3>
-
-              <p className="mt-3 text-slate-500 leading-relaxed">
-                Improve search visibility and attract high-intent visitors
-                through effective SEO strategies.
-              </p>
             </div>
           </div>
 
           {/* Card 3: Digital Marketing */}
           <div className="about-card-wrapper opacity-0 will-change-transform">
-            <div className="group h-full rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600">
-                <TrendingUp size={28} />
+            <div className="group relative h-full rounded-2xl border border-slate-200/50 bg-white/80 backdrop-blur-sm p-10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+              {/* Gradient background on hover */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{
+                  background:
+                    "radial-gradient(circle at top right, rgba(99, 102, 241, 0.1), transparent)",
+                }}
+              />
+
+              <div className="relative z-10">
+                <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 text-indigo-600 group-hover:scale-110 transition-transform duration-300">
+                  <TrendingUp size={32} />
+                </div>
+
+                <h3 className="mt-8 text-2xl font-bold text-slate-900">
+                  Digital Marketing
+                </h3>
+
+                <p className="mt-4 text-base leading-relaxed text-slate-600">
+                  Data-driven marketing campaigns designed to increase reach,
+                  engagement, and sustainable business growth over time.
+                </p>
+
+                <div className="mt-6 inline-flex items-center gap-2 text-indigo-600 font-semibold text-sm group-hover:gap-3 transition-all">
+                  Learn more <span>→</span>
+                </div>
               </div>
-
-              <h3 className="mt-6 text-xl font-semibold text-slate-900">
-                Digital Marketing
-              </h3>
-
-              <p className="mt-3 text-slate-500 leading-relaxed">
-                Data-driven marketing campaigns designed to increase reach,
-                engagement, and business growth.
-              </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Statement */}
-        <div className="mt-16 rounded-3xl border border-slate-200 bg-gradient-to-r from-slate-50 to-blue-50 p-8 text-center about-mission-trigger about-mission-anim opacity-0">
-          <p className="text-lg font-medium text-slate-700">
-            Our mission is simple:
-          </p>
+        {/* Mission Statement Section */}
+        <div className="about-mission-trigger about-mission-anim opacity-0">
+          <div className="rounded-3xl border border-slate-200/50 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/20 backdrop-blur-sm p-12 md:p-16 text-center overflow-hidden relative">
+            {/* Decorative background */}
+            <div className="absolute top-0 right-0 h-40 w-40 bg-blue-400/5 rounded-full blur-3xl -z-10" />
+            <div className="absolute bottom-0 left-0 h-40 w-40 bg-indigo-400/5 rounded-full blur-3xl -z-10" />
 
-          <p className="mt-3 text-2xl font-bold text-slate-900">
-            Help businesses grow through technology, creativity, and digital
-            innovation.
-          </p>
+            <p className="text-sm md:text-base font-semibold uppercase tracking-widest text-slate-500 mb-4">
+              Our Mission
+            </p>
+
+            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-6">
+              Help businesses grow through{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                technology, creativity, and digital innovation.
+              </span>
+            </h3>
+
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              We partner with organizations to transform their digital presence
+              and drive meaningful business impact through strategic solutions
+              and ongoing support.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4 justify-center">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/50 backdrop-blur-sm border border-slate-200/50">
+                <div className="h-3 w-3 rounded-full bg-blue-500" />
+                <span className="text-sm font-medium text-slate-700">
+                  Strategic Innovation
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/50 backdrop-blur-sm border border-slate-200/50">
+                <div className="h-3 w-3 rounded-full bg-indigo-500" />
+                <span className="text-sm font-medium text-slate-700">
+                  Results-Driven
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/50 backdrop-blur-sm border border-slate-200/50">
+                <div className="h-3 w-3 rounded-full bg-violet-500" />
+                <span className="text-sm font-medium text-slate-700">
+                  Client Success
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

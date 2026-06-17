@@ -6,11 +6,12 @@ import { WhyChooseUs } from "./components/WhyChooseUs";
 import { ImpactStats } from "./components/ImpactStats";
 import { Testimonials } from "./components/Testimonials";
 import { CTA } from "./components/CTA";
+import heroBG from "@/app/assets/HeroBG.jpg";
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero bgImage={heroBG} bgOverlayOpacity={0.6} />
       <WhoWeAre />
       <Services />
       <WhyChooseUs />

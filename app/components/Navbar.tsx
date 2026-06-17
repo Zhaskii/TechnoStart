@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown, Code2, Globe, Shield, Cpu } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, ChevronDown, Code2, Globe } from "lucide-react";
 
-const services = [
+const SERVICES = [
   {
     name: "Web Development",
     icon: Code2,
@@ -18,43 +18,38 @@ const services = [
   },
 ];
 
-const navLinks = [
+const NAV_LINKS = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services", hasDropdown: true },
   { name: "Contact", href: "/contact" },
 ];
 
-const Navbar = () => {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-
-  // Explicitly typed to prevent the 'never' type compilation error
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close dropdown on outside click
   useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
+    const onClickOutside = (e: MouseEvent) => {
       if (
         dropdownRef.current &&
         !dropdownRef.current.contains(e.target as Node)
-      ) {
+      )
         setServicesOpen(false);
-      }
     };
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
+    document.addEventListener("mousedown", onClickOutside);
+    return () => document.removeEventListener("mousedown", onClickOutside);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
     return () => {
@@ -73,97 +68,109 @@ const Navbar = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[#060b1a]/90 backdrop-blur-xl shadow-[0_4px_32px_rgba(0,0,0,0.4)] border-b border-white/[0.06]"
-            : "bg-gradient-to-b from-[#060b1a]/95 to-transparent"
+            ? "bg-[#060b1a]/95 backdrop-blur-xl border-b border-white/[0.07] shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+            : "bg-[#060b1a]/75 backdrop-blur-md"
         }`}
-        role="navigation"
         aria-label="Main navigation"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* h-16 handles clean height and items-center centers everything perfectly */}
           <div className="flex items-center justify-between h-16 md:h-[72px]">
-            {/* ── Logo (Perfectly Centered Vertically) ── */}
+            {/* ── Logo ── */}
             <a
-              href="#home"
-              className="flex items-center gap-2.5 shrink-0 my-auto"
-              aria-label="TechnoStar — Home"
+              href="/"
+              className="flex items-center gap-3 shrink-0 group"
+              aria-label="TechnoStar Home"
             >
-              <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center shadow-[0_0_16px_rgba(37,99,235,0.5)] shrink-0">
-                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
+              <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(37,99,235,0.45)] group-hover:shadow-[0_0_28px_rgba(37,99,235,0.65)] transition-shadow duration-200">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-[18px] h-[18px] fill-white"
+                >
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
               </div>
-              <div className="flex flex-col justify-center">
-                <div className="text-[17px] font-bold tracking-tight text-white font-sans leading-none">
+              <div>
+                <div className="text-[16px] font-bold tracking-tight text-white leading-none">
                   TECHNO<span className="text-blue-400">STAR</span>
                 </div>
-                <div className="text-[9px] font-medium tracking-[1.4px] uppercase text-white/30 mt-1 leading-none">
+                <div className="text-[8.5px] tracking-[0.2em] uppercase text-white/35 mt-[3px] font-light leading-none">
                   IT Solutions
                 </div>
               </div>
             </a>
 
-            {/* ── Desktop Nav ── */}
-            <div className="hidden md:flex items-center gap-1">
-              {navLinks.map((link) =>
+            {/* ── Desktop Nav Links ── */}
+            <div className="hidden md:flex items-center gap-0.5">
+              {NAV_LINKS.map((link) =>
                 link.hasDropdown ? (
                   <div
                     key={link.name}
-                    className="relative animate-none"
                     ref={dropdownRef}
+                    className="relative"
                     onMouseEnter={() => setServicesOpen(true)}
                     onMouseLeave={() => setServicesOpen(false)}
                   >
-                    <div className="flex items-center rounded-lg hover:bg-white/[0.06] transition-all duration-200">
+                    <div
+                      className={`flex items-center rounded-xl transition-colors duration-150 ${
+                        servicesOpen
+                          ? "bg-white/[0.08]"
+                          : "hover:bg-white/[0.06]"
+                      }`}
+                    >
                       <a
                         href={link.href}
-                        className="pl-3.5 pr-1 py-2 text-[13.5px] font-medium text-white/60 hover:text-white transition-colors duration-200"
+                        className={`pl-4 pr-1.5 py-2 text-[13.5px] font-medium transition-colors duration-150 ${
+                          servicesOpen
+                            ? "text-white"
+                            : "text-white/85 hover:text-white"
+                        }`}
                       >
                         {link.name}
                       </a>
                       <button
-                        className="pr-3.5 pl-1 py-2 text-white/60 hover:text-white transition-colors duration-200"
+                        className="pr-3.5 pl-0.5 py-2 text-white/40 hover:text-white/80 transition-colors duration-150"
                         aria-haspopup="true"
                         aria-expanded={servicesOpen}
-                        aria-label="Toggle services dropdown"
+                        aria-label="Toggle services"
                       >
                         <ChevronDown
                           size={13}
-                          className={`opacity-50 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
+                          className={`transition-transform duration-200 ${
+                            servicesOpen ? "rotate-180 !text-blue-400" : ""
+                          }`}
                         />
                       </button>
                     </div>
 
-                    {/* Dropdown Wrapper Container with top padding buffer to close the gap */}
+                    {/* ── Dropdown ── */}
                     <div
-                      className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 -mt-3 w-64 transition-all duration-200 ${
+                      className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 w-64 transition-all duration-200 ${
                         servicesOpen
                           ? "opacity-100 translate-y-0 pointer-events-auto"
-                          : "opacity-0 -translate-y-2 pointer-events-none"
+                          : "opacity-0 -translate-y-1.5 pointer-events-none"
                       }`}
                       role="menu"
                     >
-                      {/* Actual Menu Panel */}
-                      <div className="mt-3 bg-[#0a1228]/98 backdrop-blur-2xl border border-white/[0.08] rounded-2xl p-2 shadow-[0_24px_64px_rgba(0,0,0,0.5)] relative">
-                        {/* Arrow */}
-                        <div className="absolute -top-[5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-[#0a1228] border-l border-t border-white/[0.08] rotate-45" />
+                      <div className="relative bg-[#0c1428] border border-white/[0.1] rounded-2xl p-2 shadow-[0_24px_64px_rgba(0,0,0,0.7)]">
+                        {/* Caret */}
+                        <div className="absolute -top-[5px] left-1/2 -translate-x-1/2 w-[10px] h-[10px] bg-[#0c1428] border-l border-t border-white/[0.1] rotate-45 rounded-tl-[2px]" />
 
-                        {services.map((svc) => (
+                        {SERVICES.map((svc) => (
                           <a
                             key={svc.name}
                             href={`/services#${svc.id}`}
-                            className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/[0.05] transition-colors duration-150 group"
                             role="menuitem"
                             onClick={() => setServicesOpen(false)}
+                            className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.06] transition-colors duration-150 group"
                           >
-                            <div className="w-9 h-9 rounded-lg bg-blue-600/15 border border-blue-500/20 flex items-center justify-center shrink-0 group-hover:bg-blue-600/25 group-hover:border-blue-500/40 transition-all duration-150">
+                            <div className="w-9 h-9 rounded-xl bg-blue-600/15 border border-blue-500/20 flex items-center justify-center shrink-0 group-hover:bg-blue-600/25 group-hover:border-blue-500/35 transition-all duration-150">
                               <svc.icon size={15} className="text-blue-400" />
                             </div>
                             <div>
-                              <div className="text-[13px] font-semibold text-white/90 leading-none mb-1">
+                              <div className="text-[13px] font-semibold text-white/90 leading-none mb-1.5">
                                 {svc.name}
                               </div>
-                              <div className="text-[11px] text-white/40">
+                              <div className="text-[11px] text-white/40 leading-none">
                                 {svc.desc}
                               </div>
                             </div>
@@ -176,7 +183,7 @@ const Navbar = () => {
                   <a
                     key={link.name}
                     href={link.href}
-                    className="px-3.5 py-2 rounded-lg text-[13.5px] font-medium text-white/60 hover:text-white hover:bg-white/[0.06] transition-all duration-200"
+                    className="px-4 py-2 rounded-xl text-[13.5px] font-medium text-white/85 hover:text-white hover:bg-white/[0.06] transition-all duration-150"
                   >
                     {link.name}
                   </a>
@@ -186,37 +193,37 @@ const Navbar = () => {
 
             {/* ── Desktop Right ── */}
             <div className="hidden md:flex items-center gap-3">
-              <span className="flex items-center gap-1.5 text-[11px] text-white/30 font-medium tracking-wide border border-white/[0.07] rounded-full px-3 py-1.5">
+              <span className="flex items-center gap-1.5 text-[11px] text-white/40 font-light tracking-wide border border-white/[0.08] rounded-full px-3.5 py-1.5">
                 🇳🇵 Kathmandu
               </span>
               <a
                 href="#contact"
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-[13.5px] font-semibold rounded-xl shadow-[0_4px_16px_rgba(37,99,235,0.4)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.55)] hover:-translate-y-px transition-all duration-200"
+                className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-[13px] font-semibold tracking-wide transition-all duration-200 shadow-[0_4px_16px_rgba(37,99,235,0.4)] hover:shadow-[0_6px_24px_rgba(37,99,235,0.55)] hover:-translate-y-px"
               >
                 Free Consultation
               </a>
             </div>
 
-            {/* ── Mobile Toggle (Perfectly Centered Vertically) ── */}
+            {/* ── Mobile Toggle ── */}
             <button
-              className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/[0.06] border border-white/10 text-white hover:bg-white/10 transition-all duration-200 my-auto"
+              className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/[0.06] border border-white/[0.1] text-white hover:bg-white/[0.1] transition-all duration-150"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
               aria-controls="mobile-nav"
             >
-              {isOpen ? <X size={18} /> : <Menu size={18} />}
+              {isOpen ? <X size={17} /> : <Menu size={17} />}
             </button>
           </div>
         </div>
 
-        {/* Subtle glow line when scrolled */}
+        {/* Scroll glow line */}
         {scrolled && (
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/35 to-transparent pointer-events-none" />
         )}
       </nav>
 
-      {/* ── Mobile Menu Overlay ── */}
+      {/* ── Mobile Overlay ── */}
       <div
         className={`fixed top-16 inset-x-0 bottom-0 z-40 md:hidden transition-all duration-300 ${
           isOpen ? "visible" : "invisible"
@@ -225,41 +232,42 @@ const Navbar = () => {
       >
         {/* Backdrop */}
         <div
-          className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-black/55 backdrop-blur-sm transition-opacity duration-300 ${
             isOpen ? "opacity-100" : "opacity-0"
           }`}
           onClick={closeAll}
         />
 
-        {/* Slide-in panel — anchored below navbar */}
+        {/* Slide panel */}
         <div
           id="mobile-nav"
-          className={`absolute top-0 right-0 bottom-0 w-[min(300px,82vw)] bg-[#060b1a] border-l border-white/[0.08] flex flex-col transition-transform duration-300 ease-in-out ${
+          className={`absolute top-0 right-0 bottom-0 w-[min(300px,82vw)] bg-[#060b1a] border-l border-white/[0.08] flex flex-col transition-transform duration-300 ease-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          {/* Panel links */}
           <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-0.5">
-            {navLinks.map((link) =>
+            {NAV_LINKS.map((link) =>
               link.hasDropdown ? (
                 <div key={link.name}>
-                  <div className="w-full flex items-center justify-between rounded-xl hover:bg-white/[0.05] transition-all duration-150">
+                  <div className="flex items-center rounded-xl hover:bg-white/[0.05] transition-colors duration-150">
                     <a
                       href={link.href}
-                      className="flex-1 px-3.5 py-3 text-[14px] font-medium text-white/70 hover:text-white"
+                      className="flex-1 px-3.5 py-3 text-[14px] font-medium text-white"
                       onClick={closeAll}
                     >
                       {link.name}
                     </a>
                     <button
-                      className="px-3.5 py-3 text-white/70 hover:text-white"
+                      className="px-3.5 py-3 text-white/45 hover:text-white transition-colors duration-150"
                       onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                       aria-expanded={mobileServicesOpen}
-                      aria-label="Toggle services menu dropdown"
+                      aria-label="Toggle services"
                     >
                       <ChevronDown
                         size={14}
-                        className={`opacity-40 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
+                        className={`transition-transform duration-200 ${
+                          mobileServicesOpen ? "rotate-180 !text-blue-400" : ""
+                        }`}
                       />
                     </button>
                   </div>
@@ -267,20 +275,20 @@ const Navbar = () => {
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
                       mobileServicesOpen
-                        ? "max-h-64 opacity-100"
+                        ? "max-h-48 opacity-100"
                         : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="ml-3 pl-3 border-l border-white/[0.07] mt-1 space-y-0.5">
-                      {services.map((svc) => (
+                    <div className="ml-3 pl-3.5 border-l border-white/[0.06] mt-1 pb-1 space-y-0.5">
+                      {SERVICES.map((svc) => (
                         <a
                           key={svc.name}
                           href={`/services#${svc.id}`}
-                          className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[13px] text-white/50 hover:text-white/80 hover:bg-white/[0.04] transition-all duration-150"
+                          className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[13px] text-white/65 hover:text-white hover:bg-white/[0.05] transition-all duration-150"
                           onClick={closeAll}
                         >
                           <svc.icon
-                            size={14}
+                            size={13}
                             className="text-blue-400 shrink-0"
                           />
                           {svc.name}
@@ -293,7 +301,7 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="flex items-center px-3.5 py-3 rounded-xl text-[14px] font-medium text-white/70 hover:text-white hover:bg-white/[0.05] transition-all duration-150"
+                  className="flex items-center px-3.5 py-3 rounded-xl text-[14px] font-medium text-white hover:text-blue-300 hover:bg-white/[0.05] transition-all duration-150"
                   onClick={closeAll}
                 >
                   {link.name}
@@ -302,16 +310,15 @@ const Navbar = () => {
             )}
           </nav>
 
-          {/* Panel footer */}
-          <div className="px-4 pb-8 pt-4 border-t border-white/[0.06] shrink-0 space-y-3">
+          <div className="px-4 pb-8 pt-4 border-t border-white/[0.07] space-y-3 shrink-0">
             <a
               href="#contact"
-              className="block w-full py-3.5 bg-blue-600 hover:bg-blue-500 text-white text-[14px] font-semibold rounded-xl text-center shadow-[0_4px_16px_rgba(37,99,235,0.4)] transition-all duration-200"
+              className="block w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-[13.5px] font-semibold text-center tracking-wide shadow-[0_4px_16px_rgba(37,99,235,0.35)] transition-all duration-200"
               onClick={closeAll}
             >
               Free Consultation
             </a>
-            <p className="text-center text-[11px] text-white/20 tracking-wide">
+            <p className="text-center text-[11px] text-white/22 tracking-wide font-light">
               🇳🇵 Proudly serving businesses across Nepal
             </p>
           </div>
@@ -319,6 +326,4 @@ const Navbar = () => {
       </div>
     </>
   );
-};
-
-export default Navbar;
+}
