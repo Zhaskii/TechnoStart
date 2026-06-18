@@ -248,31 +248,31 @@ export default function About() {
         </section>
 
         {/* ── Timeline ── */}
-        <section className="bg-gradient-to-b from-white via-blue-50/20 to-white py-20 lg:py-28 about-timeline-trigger relative overflow-hidden">
+        <section className="bg-gradient-to-b from-slate-900 via-blue-950/50 to-slate-900 py-20 lg:py-28 about-timeline-trigger relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
           </div>
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20 about-timeline-wrapper opacity-0">
-              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/50 bg-blue-50/50 backdrop-blur px-4 py-2 mb-6">
-                <div className="h-2 w-2 rounded-full bg-blue-600" />
-                <span className="text-sm font-bold text-blue-700">Our Journey</span>
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur px-4 py-2 mb-6">
+                <div className="h-2 w-2 rounded-full bg-blue-400" />
+                <span className="text-sm font-bold text-blue-300">Our Journey</span>
               </div>
-              <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight">
-                A Timeline of <span className="text-blue-600">Growth</span>
+              <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+                A Timeline of <span className="text-blue-400">Growth</span>
               </h2>
             </div>
 
-            <div className="relative pl-8 border-l border-blue-200 space-y-10">
+            <div className="relative pl-8 border-l border-blue-500/30 space-y-10">
               {timeline.map((item, i) => (
                 <div key={i} className="about-timeline-wrapper opacity-0 will-change-transform">
                   <div className="relative group">
-                    <div className="absolute -left-[37px] top-2 w-4 h-4 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 border-4 border-white group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-blue-400/50 transition-all shadow-md" />
+                    <div className="absolute -left-[37px] top-2 w-4 h-4 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 border-4 border-slate-900 group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-blue-500/50 transition-all" />
                     <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6">
-                      <span className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent tabular-nums shrink-0">
+                      <span className="text-3xl font-black bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent tabular-nums shrink-0">
                         {item.year}
                       </span>
-                      <p className="text-slate-600 leading-relaxed pt-1">{item.desc}</p>
+                      <p className="text-slate-300 leading-relaxed pt-1">{item.desc}</p>
                     </div>
                   </div>
                 </div>
