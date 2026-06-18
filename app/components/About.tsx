@@ -266,7 +266,7 @@ export default function About() {
                   key={title}
                   className="about-values-wrapper opacity-0 will-change-transform"
                 >
-                  <div className="bg-white h-full rounded-2xl border border-blue-100/50 p-7 hover:-translate-y-2 hover:shadow-xl hover:border-blue-200/80 transition-all duration-500 group">
+                  <div className="bg-blue-100 h-full rounded-2xl border border-blue-100/50 p-7 hover:-translate-y-2 hover:shadow-xl hover:border-blue-200/80 transition-all duration-500 group">
                     <div className="w-12 h-12 rounded-xl bg-linear-to-br from-blue-600 to-blue-500 flex items-center justify-center mb-5 text-white group-hover:scale-110 transition-transform">
                       <Icon size={20} />
                     </div>
@@ -345,7 +345,7 @@ export default function About() {
                 key={name}
                 className="about-team-wrapper opacity-0 will-change-transform"
               >
-                <div className="bg-white h-full rounded-2xl border border-blue-100/50 p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-blue-200/80 transition-all duration-500 group relative overflow-hidden">
+                <div className="bg-blue-100 h-full rounded-2xl border border-blue-100/50 p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-blue-200/80 transition-all duration-500 group relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-20 h-20 bg-blue-100 rounded-full -mr-10 -mt-10 opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div
                     className={`w-20 h-20 rounded-2xl mx-auto flex items-center justify-center text-2xl font-bold text-white ${color} mb-6 group-hover:scale-110 transition-transform shadow-lg select-none relative z-10`}
