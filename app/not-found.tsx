@@ -54,9 +54,7 @@ export default function NotFound() {
               className="flex items-start gap-3 text-[12px] animate-terminal-line"
               style={{ animationDelay: "150ms" }}
             >
-              <span className="text-white/20 select-none flex-shrink-0">
-                01
-              </span>
+              <span className="text-white/20 select-none shrink-0">01</span>
               <span className="text-white/30">
                 <span className="text-blue-500/70">GET</span> /requested-route
                 HTTP/1.1
@@ -66,9 +64,7 @@ export default function NotFound() {
               className="flex items-start gap-3 text-[12px] animate-terminal-line"
               style={{ animationDelay: "300ms" }}
             >
-              <span className="text-white/20 select-none flex-shrink-0">
-                02
-              </span>
+              <span className="text-white/20 select-none shrink-0">02</span>
               <span className="text-white/30">
                 <span className="text-red-400/80">ERR</span> Route not
                 registered in manifest
@@ -78,9 +74,7 @@ export default function NotFound() {
               className="flex items-start gap-3 text-[12px] animate-terminal-line"
               style={{ animationDelay: "450ms" }}
             >
-              <span className="text-white/20 select-none flex-shrink-0">
-                03
-              </span>
+              <span className="text-white/20 select-none shrink-0">03</span>
               <span className="text-white/30">
                 <span className="text-yellow-400/70">WRN</span> Fallback handler
                 invoked
@@ -90,9 +84,7 @@ export default function NotFound() {
               className="flex items-start gap-3 text-[12px] animate-terminal-line"
               style={{ animationDelay: "600ms" }}
             >
-              <span className="text-white/20 select-none flex-shrink-0">
-                04
-              </span>
+              <span className="text-white/20 select-none shrink-0">04</span>
               <span className="text-white/30">
                 Status:{" "}
                 <span className="text-white/70 font-semibold">
@@ -104,9 +96,7 @@ export default function NotFound() {
               className="flex items-start gap-3 text-[12px] pt-1 animate-terminal-line"
               style={{ animationDelay: "750ms" }}
             >
-              <span className="text-white/20 select-none flex-shrink-0">
-                &gt;_
-              </span>
+              <span className="text-white/20 select-none shrink-0">&gt;_</span>
               <span className="text-blue-400/80 animate-[pulse_1s_infinite]">
                 █
               </span>
@@ -168,7 +158,7 @@ export default function NotFound() {
           <HelpCircle
             size={12}
             strokeWidth={1.5}
-            className="text-blue-500/50 flex-shrink-0"
+            className="text-blue-500/50 shrink-0"
           />
           <span>
             Need help?{" "}

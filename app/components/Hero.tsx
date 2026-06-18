@@ -76,7 +76,7 @@ export default function Hero({ bgImage, bgOverlayOpacity = 0.6 }: HeroProps) {
       />
 
       {/* Blue brand glow */}
-      <div className="pointer-events-none absolute -top-20 right-0 h-[360px] w-[360px] rounded-full bg-blue-600/20 blur-[100px]" />
+      <div className="pointer-events-none absolute -top-20 right-0 h-90 w-90 rounded-full bg-blue-600/20 blur-[100px]" />
 
       <div className="relative z-20 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-24 lg:px-8">
         <div className="grid w-full items-center gap-14 lg:grid-cols-2 lg:gap-10">
@@ -93,7 +93,7 @@ export default function Hero({ bgImage, bgOverlayOpacity = 0.6 }: HeroProps) {
               <span className="text-blue-400">visible online.</span>
             </h1>
 
-            <p className="mt-5 max-w-[460px] text-[15px] leading-relaxed text-[#A0A0A0] md:text-base">
+            <p className="mt-5 max-w-115 text-[15px] leading-relaxed text-[#A0A0A0] md:text-base">
               We build fast websites, run SEO campaigns, and manage ads that
               bring real customers — not just clicks.
             </p>
@@ -124,7 +124,7 @@ export default function Hero({ bgImage, bgOverlayOpacity = 0.6 }: HeroProps) {
               </a>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-8 border-t border-white/[0.08] pt-8">
+            <div className="mt-10 flex flex-wrap gap-8 border-t border-white/8 pt-8">
               {STATS.map(({ value, label }) => (
                 <div key={label}>
                   <p className="text-2xl font-bold text-white">{value}</p>
@@ -136,12 +136,12 @@ export default function Hero({ bgImage, bgOverlayOpacity = 0.6 }: HeroProps) {
 
           {/* ── RIGHT ── */}
           <div className="hero-card flex justify-center lg:justify-end md:mb-1 mb-10">
-            <div className="relative w-full max-w-[520px]">
+            <div className="relative w-full max-w-130">
               {/* Glow — blue only */}
-              <div className="absolute inset-0 rounded-[32px] bg-blue-500/15 blur-3xl" />
+              <div className="absolute inset-0 rounded-4xl bg-blue-500/15 blur-3xl" />
 
               {/* Main Card */}
-              <div className="relative rounded-[32px] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
+              <div className="relative rounded-4xl border border-white/10 bg-white/4 p-8 backdrop-blur-xl">
                 {/* Browser dots — blue/white palette */}
                 <div className="mb-8 flex gap-2">
                   <div className="h-3 w-3 rounded-full bg-red-500" />

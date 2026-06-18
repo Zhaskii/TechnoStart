@@ -74,7 +74,7 @@ export default function Navbar() {
         aria-label="Main navigation"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-[72px]">
+          <div className="flex items-center justify-between h-16 md:h-18">
             {/* ── Logo ── */}
             <a
               href="/"
@@ -82,10 +82,7 @@ export default function Navbar() {
               aria-label="TechnoStar Home"
             >
               <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(37,99,235,0.45)] group-hover:shadow-[0_0_28px_rgba(37,99,235,0.65)] transition-shadow duration-200">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-[18px] h-[18px] fill-white"
-                >
+                <svg viewBox="0 0 24 24" className="w-4.5 h-4.5 fill-white">
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
               </div>
@@ -93,7 +90,7 @@ export default function Navbar() {
                 <div className="text-[16px] font-bold tracking-tight text-white leading-none">
                   TECHNO<span className="text-blue-400">STAR</span>
                 </div>
-                <div className="text-[8.5px] tracking-[0.2em] uppercase text-white/35 mt-[3px] font-light leading-none">
+                <div className="text-[8.5px] tracking-[0.2em] uppercase text-white/35 mt-0.75 font-light leading-none">
                   IT Solutions
                 </div>
               </div>
@@ -112,9 +109,7 @@ export default function Navbar() {
                   >
                     <div
                       className={`flex items-center rounded-xl transition-colors duration-150 ${
-                        servicesOpen
-                          ? "bg-white/[0.08]"
-                          : "hover:bg-white/[0.06]"
+                        servicesOpen ? "bg-white/8" : "hover:bg-white/6"
                       }`}
                     >
                       <a
@@ -136,7 +131,7 @@ export default function Navbar() {
                         <ChevronDown
                           size={13}
                           className={`transition-transform duration-200 ${
-                            servicesOpen ? "rotate-180 !text-blue-400" : ""
+                            servicesOpen ? "rotate-180 text-blue-400!" : ""
                           }`}
                         />
                       </button>
@@ -151,9 +146,9 @@ export default function Navbar() {
                       }`}
                       role="menu"
                     >
-                      <div className="relative bg-[#0c1428] border border-white/[0.1] rounded-2xl p-2 shadow-[0_24px_64px_rgba(0,0,0,0.7)]">
+                      <div className="relative bg-[#0c1428] border border-white/10 rounded-2xl p-2 shadow-[0_24px_64px_rgba(0,0,0,0.7)]">
                         {/* Caret */}
-                        <div className="absolute -top-[5px] left-1/2 -translate-x-1/2 w-[10px] h-[10px] bg-[#0c1428] border-l border-t border-white/[0.1] rotate-45 rounded-tl-[2px]" />
+                        <div className="absolute -top-1.25 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-[#0c1428] border-l border-t border-white/10 rotate-45 rounded-tl-xs" />
 
                         {SERVICES.map((svc) => (
                           <a
@@ -161,7 +156,7 @@ export default function Navbar() {
                             href={`/services#${svc.id}`}
                             role="menuitem"
                             onClick={() => setServicesOpen(false)}
-                            className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/[0.06] transition-colors duration-150 group"
+                            className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/6 transition-colors duration-150 group"
                           >
                             <div className="w-9 h-9 rounded-xl bg-blue-600/15 border border-blue-500/20 flex items-center justify-center shrink-0 group-hover:bg-blue-600/25 group-hover:border-blue-500/35 transition-all duration-150">
                               <svc.icon size={15} className="text-blue-400" />
@@ -183,7 +178,7 @@ export default function Navbar() {
                   <a
                     key={link.name}
                     href={link.href}
-                    className="px-4 py-2 rounded-xl text-[13.5px] font-medium text-white/85 hover:text-white hover:bg-white/[0.06] transition-all duration-150"
+                    className="px-4 py-2 rounded-xl text-[13.5px] font-medium text-white/85 hover:text-white hover:bg-white/6 transition-all duration-150"
                   >
                     {link.name}
                   </a>
@@ -193,7 +188,7 @@ export default function Navbar() {
 
             {/* ── Desktop Right ── */}
             <div className="hidden md:flex items-center gap-3">
-              <span className="flex items-center gap-1.5 text-[11px] text-white/40 font-light tracking-wide border border-white/[0.08] rounded-full px-3.5 py-1.5">
+              <span className="flex items-center gap-1.5 text-[11px] text-white/40 font-light tracking-wide border border-white/8 rounded-full px-3.5 py-1.5">
                 🇳🇵 Kathmandu
               </span>
               <a
@@ -206,7 +201,7 @@ export default function Navbar() {
 
             {/* ── Mobile Toggle ── */}
             <button
-              className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/[0.06] border border-white/[0.1] text-white hover:bg-white/[0.1] transition-all duration-150"
+              className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/6 border border-white/10 text-white hover:bg-white/10 transition-all duration-150"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
@@ -219,7 +214,7 @@ export default function Navbar() {
 
         {/* Scroll glow line */}
         {scrolled && (
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/35 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500/35 to-transparent pointer-events-none" />
         )}
       </nav>
 
@@ -241,7 +236,7 @@ export default function Navbar() {
         {/* Slide panel */}
         <div
           id="mobile-nav"
-          className={`absolute top-0 right-0 bottom-0 w-[min(300px,82vw)] bg-[#060b1a] border-l border-white/[0.08] flex flex-col transition-transform duration-300 ease-out ${
+          className={`absolute top-0 right-0 bottom-0 w-[min(300px,82vw)] bg-[#060b1a] border-l border-white/8 flex flex-col transition-transform duration-300 ease-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -249,7 +244,7 @@ export default function Navbar() {
             {NAV_LINKS.map((link) =>
               link.hasDropdown ? (
                 <div key={link.name}>
-                  <div className="flex items-center rounded-xl hover:bg-white/[0.05] transition-colors duration-150">
+                  <div className="flex items-center rounded-xl hover:bg-white/5 transition-colors duration-150">
                     <a
                       href={link.href}
                       className="flex-1 px-3.5 py-3 text-[14px] font-medium text-white"
@@ -266,7 +261,7 @@ export default function Navbar() {
                       <ChevronDown
                         size={14}
                         className={`transition-transform duration-200 ${
-                          mobileServicesOpen ? "rotate-180 !text-blue-400" : ""
+                          mobileServicesOpen ? "rotate-180 text-blue-400!" : ""
                         }`}
                       />
                     </button>
@@ -279,12 +274,12 @@ export default function Navbar() {
                         : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="ml-3 pl-3.5 border-l border-white/[0.06] mt-1 pb-1 space-y-0.5">
+                    <div className="ml-3 pl-3.5 border-l border-white/6 mt-1 pb-1 space-y-0.5">
                       {SERVICES.map((svc) => (
                         <a
                           key={svc.name}
                           href={`/services#${svc.id}`}
-                          className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[13px] text-white/65 hover:text-white hover:bg-white/[0.05] transition-all duration-150"
+                          className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[13px] text-white/65 hover:text-white hover:bg-white/5 transition-all duration-150"
                           onClick={closeAll}
                         >
                           <svc.icon
@@ -301,7 +296,7 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="flex items-center px-3.5 py-3 rounded-xl text-[14px] font-medium text-white hover:text-blue-300 hover:bg-white/[0.05] transition-all duration-150"
+                  className="flex items-center px-3.5 py-3 rounded-xl text-[14px] font-medium text-white hover:text-blue-300 hover:bg-white/5 transition-all duration-150"
                   onClick={closeAll}
                 >
                   {link.name}

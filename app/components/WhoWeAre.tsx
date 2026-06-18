@@ -122,7 +122,7 @@ export const WhoWeAre: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50 py-32"
+      className="relative overflow-hidden bg-linear-to-br from-slate-50 via-white to-blue-50 py-32"
     >
       {/* Decorative background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -142,7 +142,7 @@ export const WhoWeAre: React.FC = () => {
 
           <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight about-header-anim opacity-0">
             Building Digital Experiences{" "}
-            <span className="block bg-gradient-to-r text-[#165DFC] bg-clip-text ">
+            <span className="block bg-linear-to-r text-[#165DFC] bg-clip-text ">
               That Drive Business Growth
             </span>
           </h2>
@@ -175,7 +175,7 @@ export const WhoWeAre: React.FC = () => {
 
                   <div className="relative z-10">
                     <div
-                      className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${card.bgColorClass} ${card.accentColor} group-hover:scale-110 transition-transform duration-300`}
+                      className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br ${card.bgColorClass} ${card.accentColor} group-hover:scale-110 transition-transform duration-300`}
                     >
                       <CardIcon size={32} />
                     </div>
@@ -202,7 +202,7 @@ export const WhoWeAre: React.FC = () => {
 
         {/* Mission Statement Section */}
         <div className="about-mission-trigger about-mission-anim opacity-0">
-          <div className="rounded-3xl border border-slate-200/50 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/20 backdrop-blur-sm p-12 md:p-16 text-center overflow-hidden relative">
+          <div className="rounded-3xl border border-slate-200/50 bg-linear-to-br from-slate-50 via-blue-50/30 to-indigo-50/20 backdrop-blur-sm p-12 md:p-16 text-center overflow-hidden relative">
             <div className="absolute top-0 right-0 h-40 w-40 bg-blue-400/5 rounded-full blur-3xl -z-10" />
             <div className="absolute bottom-0 left-0 h-40 w-40 bg-indigo-400/5 rounded-full blur-3xl -z-10" />
 
@@ -212,7 +212,7 @@ export const WhoWeAre: React.FC = () => {
 
             <h3 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-6">
               Help businesses grow through{" "}
-              <span className="bg-gradient-to-r text-[#165DFC] bg-clip-text">
+              <span className="bg-linear-to-r text-[#165DFC] bg-clip-text">
                 technology, creativity, and digital innovation.
               </span>
             </h3>

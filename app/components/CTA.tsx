@@ -53,12 +53,12 @@ export const CTA: React.FC = () => {
             backgroundSize: "32px 32px",
           }}
         />
-        <div className="absolute -top-40 -left-40 h-[480px] w-[480px] rounded-full bg-blue-600/15 blur-[100px]" />
-        <div className="absolute -bottom-40 -right-40 h-[480px] w-[480px] rounded-full bg-blue-500/10 blur-[100px]" />
+        <div className="absolute -top-40 -left-40 h-120 w-120 rounded-full bg-blue-600/15 blur-[100px]" />
+        <div className="absolute -bottom-40 -right-40 h-120 w-120 rounded-full bg-blue-500/10 blur-[100px]" />
       </div>
 
       <div className="relative z-30 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="cta-panel-trigger relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-10 text-center lg:p-16">
+        <div className="cta-panel-trigger relative overflow-hidden rounded-2xl border border-white/] bg-white/3 p-10 text-center lg:p-16">
           {/* Inner top glow */}
           <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-48 rounded-full bg-blue-600/20 blur-3xl" />
 
@@ -95,7 +95,7 @@ export const CTA: React.FC = () => {
 
             <a
               href="tel:+9779800000000"
-              className="inline-flex items-center gap-2.5 border border-white/[0.12] bg-white/[0.04] hover:bg-white/[0.08] hover:border-white/20 text-white font-semibold text-[14px] px-8 py-4 rounded-xl transition-all duration-200 w-full sm:w-auto justify-center"
+              className="inline-flex items-center gap-2.5 border border-white/12 bg-white/4 hover:bg-white/8 hover:border-white/20 text-white font-semibold text-[14px] px-8 py-4 rounded-xl transition-all duration-200 w-full sm:w-auto justify-center"
             >
               <Phone className="h-4 w-4" strokeWidth={1.75} />
               Call us now

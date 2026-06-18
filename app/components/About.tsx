@@ -287,7 +287,7 @@ export default function About() {
                   {/* CSS Context Container */}
                   <div className="relative group">
                     {/* Dot */}
-                    <div className="absolute -left-[37px] top-1 w-3.5 h-3.5 rounded-full bg-blue-500 border-4 border-[#060b1a] group-hover:scale-125 transition-transform" />
+                    <div className="absolute -left-9.25 top-1 w-3.5 h-3.5 rounded-full bg-blue-500 border-4 border-[#060b1a] group-hover:scale-125 transition-transform" />
                     <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
                       <span className="text-2xl font-black text-blue-400 tabular-nums shrink-0">
                         {item.year}
@@ -340,7 +340,7 @@ export default function About() {
         {/* ── CTA ── */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 about-cta-trigger">
           <div className="relative overflow-hidden rounded-3xl bg-blue-600 px-8 py-14 sm:px-14 text-center text-white about-cta-anim opacity-0">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:24px_24px]" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [bg-size-24px_24px]" />
             <div className="relative max-w-xl mx-auto">
               <h2 className="text-2xl sm:text-3xl font-bold mb-4">
                 Why Clients Trust Us

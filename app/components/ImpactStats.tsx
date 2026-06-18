@@ -97,7 +97,7 @@ export const ImpactStats: React.FC = () => {
           {STATS.map(({ value, label, icon: Icon }) => (
             <div
               key={label}
-              className="stats-card-anim opacity-0 group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500/25 hover:bg-white/[0.06]"
+              className="stats-card-anim opacity-0 group relative overflow-hidden rounded-2xl border border-white/8 bg-white/3 p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500/25 hover:bg-white/6"
             >
               {/* Hover glow */}
               <div className="pointer-events-none absolute -top-10 -right-10 h-32 w-32 rounded-full bg-blue-500/10 blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -118,14 +118,14 @@ export const ImpactStats: React.FC = () => {
               </p>
 
               {/* Bottom accent line */}
-              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </div>
           ))}
         </div>
 
         {/* ── Bottom Banner ── */}
         <div className="mt-6 stats-banner-trigger">
-          <div className="stats-banner-anim opacity-0 will-change-transform relative overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.03] px-10 py-12 lg:px-14 text-center">
+          <div className="stats-banner-anim opacity-0 will-change-transform relative overflow-hidden rounded-2xl border border-white/[0.07] bg-white/3 px-10 py-12 lg:px-14 text-center">
             {/* Dot texture */}
             <div
               className="pointer-events-none absolute inset-0 opacity-[0.025]"

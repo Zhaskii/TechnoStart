@@ -57,7 +57,7 @@ export default function PageBanner({
 
       <div className="pointer-events-none absolute inset-0">
         <div
-          className={`absolute top-0 left-1/2 -translate-x-1/2 w-[600px] lg:w-[800px] h-64 lg:h-80 ${glowClasses[bgGlowColor]} blur-3xl rounded-full`}
+          className={`absolute top-0 left-1/2 -translate-x-1/2 w-150 lg:w-200 h-64 lg:h-80 ${glowClasses[bgGlowColor]} blur-3xl rounded-full`}
         />
       </div>
       <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">

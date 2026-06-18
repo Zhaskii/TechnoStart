@@ -376,7 +376,7 @@ export default function ServiceDetails() {
 
         {/* ── CALL TO ACTION BANNER ── */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center details-cta-trigger">
-          <div className="bg-gradient-to-br from-[#060816] to-[#11163a] rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden details-cta-anim opacity-0">
+          <div className="bg-linear-to-br from-[#060816] to-[#11163a] rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden details-cta-anim opacity-0">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/10 blur-3xl rounded-full pointer-events-none" />
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 relative z-10">
               Ready to Launch Your Next Project?

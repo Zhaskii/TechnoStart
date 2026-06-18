@@ -124,13 +124,13 @@ export const Services: React.FC = () => {
               key={svc.title}
               className="services-card-wrapper opacity-0 will-change-transform"
             >
-              <article className="group relative h-full overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8 lg:p-10 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500/25 hover:bg-white/[0.05]">
+              <article className="group relative h-full overflow-hidden rounded-2xl border border-white/8 bg-white/3 p-8 lg:p-10 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500/25 hover:bg-white/5">
                 {/* Hover glow */}
                 <div className="pointer-events-none absolute -top-24 -right-12 h-48 w-48 rounded-full bg-blue-500/10 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                 {/* Icon + Title */}
                 <div className="relative flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-600/15 border border-blue-500/20 flex-shrink-0 group-hover:bg-blue-600/25 group-hover:border-blue-500/35 transition-colors duration-300">
+                  <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-600/15 border border-blue-500/20 shrink-0 group-hover:bg-blue-600/25 group-hover:border-blue-500/35 transition-colors duration-300">
                     <svc.icon
                       className="h-6 w-6 text-blue-400"
                       strokeWidth={1.75}
@@ -153,7 +153,7 @@ export const Services: React.FC = () => {
                       key={f}
                       className="flex items-center gap-2.5 text-[13px] text-slate-300"
                     >
-                      <div className="w-4 h-4 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0">
+                      <div className="w-4 h-4 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center shrink-0">
                         <Check
                           className="h-2.5 w-2.5 text-blue-400"
                           strokeWidth={2.5}
@@ -179,7 +179,7 @@ export const Services: React.FC = () => {
 
         {/* ── Bottom CTA ── */}
         <div className="mt-8 services-cta-trigger">
-          <div className="services-cta-anim opacity-0 will-change-transform relative overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.03] p-10 lg:p-14 text-center">
+          <div className="services-cta-anim opacity-0 will-change-transform relative overflow-hidden rounded-2xl border border-white/[0.07] bg-white/3 p-10 lg:p-14 text-center">
             {/* Dot texture */}
             <div
               className="pointer-events-none absolute inset-0 opacity-[0.025]"

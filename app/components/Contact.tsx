@@ -414,7 +414,7 @@ export default function Contact() {
 
               {/* Map Box Container */}
               <div className="w-full h-80 sm:h-96 bg-slate-100 rounded-2xl overflow-hidden border border-slate-200/60 relative flex flex-col justify-center items-center text-center p-4">
-                <div className="absolute inset-0 opacity-40 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:3rem_3rem]" />
+                <div className="absolute inset-0 opacity-40 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-size-[3rem_3rem]" />
                 <MapPin
                   size={36}
                   className="text-blue-600 animate-bounce mb-3 relative z-10"
