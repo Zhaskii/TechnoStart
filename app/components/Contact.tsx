@@ -195,6 +195,7 @@ export default function Contact() {
                     {/* LinkedIn SVG */}
                     <a
                       href="https://www.linkedin.com/"
+                      target="_blank"
                       aria-label="LinkedIn"
                       className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:bg-blue-50 hover:border-blue-200 transition-all active:scale-95"
                     >
@@ -218,6 +219,7 @@ export default function Contact() {
                     {/* Twitter / X SVG */}
                     <a
                       href="https://www.x.com/"
+                      target="_blank"
                       aria-label="Twitter"
                       className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:bg-blue-50 hover:border-blue-200 transition-all active:scale-95"
                     >
@@ -239,6 +241,7 @@ export default function Contact() {
                     {/* Facebook SVG */}
                     <a
                       href="https://www.facebook.com/"
+                      target="_blank"
                       aria-label="Facebook"
                       className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:bg-blue-50 hover:border-blue-200 transition-all active:scale-95"
                     >
