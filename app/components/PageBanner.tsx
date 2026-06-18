@@ -64,7 +64,7 @@ export default function PageBanner({
         <span className="page-banner-anim inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-400 mb-6 opacity-0">
           {badgeText}
         </span>
-        <h1 className="page-banner-anim text-5xl sm:text-6xl font-black tracking-tight text-white leading-none mb-6 opacity-0">
+        <h1 className="page-banner-anim text-5xl sm:text-6xl font-black tracking-tight text-white/85 leading-none mb-6 opacity-0">
           {title}
         </h1>
         <p className="page-banner-anim text-lg text-slate-400 leading-relaxed max-w-xl mx-auto opacity-0">

@@ -34,7 +34,7 @@ const CARD_DATA: FeatureCard[] = [
     icon: Search,
     title: "SEO Optimization",
     description:
-      "Improve search visibility and attract high-intent visitors through effective, data-backed SEO strategies that drive results.",
+      "Improve search visibility and attract high-intent visitors through effective, data-backed SEO strategies that drive long-term business results.",
     accentColor: "text-[#165DFC]",
     bgColorClass: "from-blue-50 to-blue-100",
     radialColor: "rgba(22, 93, 252, 0.1)",
@@ -187,12 +187,6 @@ export const WhoWeAre: React.FC = () => {
                     <p className="mt-4 text-base leading-relaxed text-slate-600">
                       {card.description}
                     </p>
-
-                    <div
-                      className={`mt-6 inline-flex items-center gap-2 ${card.accentColor} font-semibold text-sm group-hover:gap-3 transition-all`}
-                    >
-                      Learn more <span>→</span>
-                    </div>
                   </div>
                 </div>
               </div>

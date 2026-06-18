@@ -20,7 +20,7 @@ const SERVICES = [
       "Fast Loading",
       "Modern UI/UX",
     ],
-    link: "#webdev",
+    link: "services#webdev",
   },
   {
     icon: Megaphone,
@@ -28,7 +28,7 @@ const SERVICES = [
     description:
       "Strategic campaigns that increase visibility, generate quality leads, and grow your brand.",
     features: ["SEO Strategy", "Google Ads", "Social Media", "Lead Generation"],
-    link: "#marketing",
+    link: "services#marketing",
   },
 ];
 

@@ -29,7 +29,7 @@ export const WhyChooseUs: React.FC = () => {
   ];
 
   useEffect(() => {
-    // 1. Header Elements Animation
+    // 1. Header Elements Animation (Badge, Title, Paragraph)
     gsap.fromTo(
       ".choose-header-anim",
       {
@@ -50,22 +50,19 @@ export const WhyChooseUs: React.FC = () => {
       },
     );
 
-    // 2. Trust Reason Cards Animation (Staggered entrance)
-    // Optimized with force3D and clearProps to eliminate transform pipeline stuttering
+    // 2. Trust Reason Cards Animation (Staggered entrance with dedicated wrapper handling)
     gsap.fromTo(
-      ".choose-card-anim",
+      ".choose-card-wrapper",
       {
         opacity: 0,
-        y: 45,
+        y: 30,
       },
       {
         opacity: 1,
         y: 0,
-        duration: 0.8,
-        stagger: 0.15,
+        duration: 0.6,
+        stagger: 0.12,
         ease: "power2.out",
-        force3D: true,
-        clearProps: "transform",
         scrollTrigger: {
           trigger: ".choose-cards-trigger",
           start: "top 78%",
@@ -79,14 +76,14 @@ export const WhyChooseUs: React.FC = () => {
       {
         opacity: 0,
         scale: 0.96,
-        y: 30,
+        y: 25,
       },
       {
         opacity: 1,
         scale: 1,
         y: 0,
         duration: 0.8,
-        ease: "power2.out",
+        ease: "back.out(1.2)",
         scrollTrigger: {
           trigger: ".choose-banner-trigger",
           start: "top 85%",
@@ -115,7 +112,7 @@ export const WhyChooseUs: React.FC = () => {
           </span>
 
           <h2 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl choose-header-anim opacity-0">
-            Why Businesses Trust
+            Why Businesses Trust{" "}
             <span className="block text-blue-600">Techno Star</span>
           </h2>
 
@@ -125,40 +122,42 @@ export const WhyChooseUs: React.FC = () => {
           </p>
         </div>
 
-        {/* Cards */}
-        {/* Fixed: Replaced translation latency filters. Bound hover updates strictly to explicit design parameters */}
+        {/* Cards Grid Architecture */}
         <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3 choose-cards-trigger">
           {reasons.map((item, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm will-change-transform transition-[border-color,box-shadow,transform] duration-300 transform-gpu hover:-translate-y-2 hover:border-blue-200 hover:shadow-xl choose-card-anim opacity-0"
+              className="choose-card-wrapper opacity-0 will-change-transform"
             >
-              {/* Number */}
-              <div className="absolute right-6 top-4 text-6xl font-black text-slate-100 select-none">
-                0{index + 1}
+              <div className="group relative h-full overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-blue-200 hover:shadow-2xl">
+                {/* Number Accent */}
+                <div className="absolute right-6 top-4 text-6xl font-black text-slate-100 select-none transition-transform duration-500 group-hover:scale-105">
+                  0{index + 1}
+                </div>
+
+                {/* Icon Layout Shield */}
+                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-all duration-300 group-hover:scale-110">
+                  {item.icon}
+                </div>
+
+                {/* Content Details */}
+                <h3 className="relative z-10 mt-6 text-xl font-bold text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p className="relative z-10 mt-4 leading-relaxed text-slate-600">
+                  {item.desc}
+                </p>
+
+                {/* Micro-Interactive Indicator Trigger */}
+                <div className="relative z-10 mt-6 inline-flex items-center text-sm font-semibold text-blue-600 group-hover:gap-3 transition-all duration-300 gap-2">
+                  Learn More
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300" />
+                </div>
+
+                {/* Hover Radial Gradient Accent Ring Overlay */}
+                <div className="absolute inset-0 bg-linear-to-br from-blue-50/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
               </div>
-
-              {/* Icon */}
-              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-colors duration-300 group-hover:bg-blue-600 group-hover:text-white">
-                {item.icon}
-              </div>
-
-              {/* Content */}
-              <h3 className="relative z-10 mt-6 text-xl font-bold text-slate-900">
-                {item.title}
-              </h3>
-
-              <p className="relative z-10 mt-4 leading-relaxed text-slate-600">
-                {item.desc}
-              </p>
-
-              <div className="relative z-10 mt-6 flex items-center text-sm font-semibold text-blue-600">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </div>
-
-              {/* Hover Effect */}
-              <div className="absolute inset-0 bg-linear-to-br from-blue-50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </div>
           ))}
         </div>

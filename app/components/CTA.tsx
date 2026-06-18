@@ -58,7 +58,7 @@ export const CTA: React.FC = () => {
       </div>
 
       <div className="relative z-30 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="cta-panel-trigger relative overflow-hidden rounded-2xl border border-white/] bg-white/3 p-10 text-center lg:p-16">
+        <div className="cta-panel-trigger relative overflow-hidden rounded-2xl border border-white/12 bg-white/3 p-10 text-center lg:p-16">
           {/* Inner top glow */}
           <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-48 rounded-full bg-blue-600/20 blur-3xl" />
 

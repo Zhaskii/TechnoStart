@@ -123,7 +123,7 @@ export default function Contact() {
         />
 
         {/* ── CONTACT GRID & DETAILS ── */}
-        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 -mt-10 relative z-10 contact-grid-trigger">
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-30 -mt-10 relative z-10 contact-grid-trigger">
           <div className="grid lg:grid-cols-12 gap-8 items-start">
             {/* Left Column: Contact Info Card Wrapper */}
             <div className="lg:col-span-5 contact-grid-wrapper opacity-0 will-change-transform">
