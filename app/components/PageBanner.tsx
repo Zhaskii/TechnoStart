@@ -39,7 +39,7 @@ export default function PageBanner({
 
   return (
     <section
-      className="relative mt-8 py-24 lg:py-32 overflow-hidden bg-cover bg-center"
+      className="relative mt-10 py-24 lg:py-32 overflow-hidden bg-cover bg-center"
       style={{
         backgroundImage: bgImageUrl ? `url(${bgImageUrl})` : "none",
         backgroundColor: bgImageUrl ? "transparent" : "#060816",

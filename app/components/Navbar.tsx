@@ -69,7 +69,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-[#060b1a]/90 backdrop-blur-xl border-b border-white/[0.07] shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
-            : "bg-[#060b1a] backdrop-blur-md"
+            : "bg-[#060f25]/95 backdrop-blur-md"
         }`}
         aria-label="Main navigation"
       >
