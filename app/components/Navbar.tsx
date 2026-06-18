@@ -114,7 +114,7 @@ export default function Navbar() {
                     >
                       <a
                         href={link.href}
-                        className={`pl-4 pr-1.5 py-2 text-[13.5px] font-medium transition-colors duration-150 ${
+                        className={`pl-4 pr-1.5 py-2 text-[15.5px] font-medium transition-colors duration-150 ${
                           servicesOpen
                             ? "text-white"
                             : "text-white/85 hover:text-white"
@@ -178,7 +178,7 @@ export default function Navbar() {
                   <a
                     key={link.name}
                     href={link.href}
-                    className="px-4 py-2 rounded-xl text-[13.5px] font-medium text-white/85 hover:text-white hover:bg-white/6 transition-all duration-150"
+                    className="px-4 py-2 rounded-xl text-[15.5px] font-medium text-white/85 hover:text-white hover:bg-white/6 transition-all duration-150"
                   >
                     {link.name}
                   </a>
@@ -247,7 +247,7 @@ export default function Navbar() {
                   <div className="flex items-center rounded-xl hover:bg-white/5 transition-colors duration-150">
                     <a
                       href={link.href}
-                      className="flex-1 px-3.5 py-3 text-[14px] font-medium text-white"
+                      className="flex-1 px-3.5 py-3 text-[15.5px] font-medium text-white"
                       onClick={closeAll}
                     >
                       {link.name}
@@ -296,7 +296,7 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="flex items-center px-3.5 py-3 rounded-xl text-[14px] font-medium text-white hover:text-blue-300 hover:bg-white/5 transition-all duration-150"
+                  className="flex items-center px-3.5 py-3 rounded-xl text-[15.5px] font-medium text-white hover:text-blue-300 hover:bg-white/5 transition-all duration-150"
                   onClick={closeAll}
                 >
                   {link.name}
