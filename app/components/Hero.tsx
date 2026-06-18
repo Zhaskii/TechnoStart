@@ -118,7 +118,7 @@ export default function Hero({ bgImage, bgOverlayOpacity = 0.6 }: HeroProps) {
                 Get a free quote
               </a>
               <a
-                href="#services"
+                href="/services"
                 className="rounded-lg border border-white/10 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white/70 transition-colors duration-150 hover:bg-white/10 hover:text-white active:scale-95"
               >
                 See our work →
