@@ -208,7 +208,7 @@ export default function ServiceDetails() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-500 selection:text-white">
+    <div className="min-h-screen bg-gradient-to-b from-white via-blue-50/20 to-white text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
       <main>
         <PageBanner
           badgeText="Our Expertise"
@@ -220,68 +220,55 @@ export default function ServiceDetails() {
         {/* ── SECTION 1: WEBSITE DEVELOPMENT ── */}
         <section
           id="webdev"
-          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 scroll-mt-10 web-header-trigger"
+          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 scroll-mt-10 web-header-trigger"
         >
-          <div className="border-b border-slate-200 pb-6 mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4 web-header-anim opacity-0">
+          <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6 web-header-anim opacity-0">
             <div>
-              <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-2">
-                Engineered to Perform
-              </span>
-              <h2 className="text-3xl font-black text-slate-900 tracking-tight sm:text-4xl">
-                Website Development
+              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/50 bg-blue-50/50 backdrop-blur px-4 py-2 mb-6">
+                <div className="h-2 w-2 rounded-full bg-blue-600" />
+                <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Engineered to Perform</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+                Website <span className="text-blue-600">Development</span>
               </h2>
             </div>
-            <p className="text-slate-500 max-w-md text-sm md:text-base">
-              Custom-built scalable infrastructure using advanced React
-              ecosystems to match modern operational criteria.
+            <p className="text-slate-600 max-w-md text-base">
+              Custom-built scalable infrastructure using advanced React ecosystems to match modern operational criteria.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 web-cards-trigger">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 web-cards-trigger">
             {webServices.map((service, index) => (
-              /* GSAP Structural Isolation Wrapper Target */
-              <div
-                key={index}
-                className="web-card-wrapper opacity-0 will-change-transform"
-              >
-                {/* Independent Component Interaction Layer */}
-                <article className="h-full bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all group flex flex-col justify-between">
-                  <div>
-                    <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-5 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                      <service.icon size={20} />
+              <div key={index} className="web-card-wrapper opacity-0 will-change-transform">
+                <article className="h-full bg-white rounded-2xl border border-blue-100/50 p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-blue-200/80 transition-all duration-500 group flex flex-col justify-between relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-blue-100 rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600 to-blue-500 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <service.icon size={24} />
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                    <p className="text-slate-600 text-base leading-relaxed mb-8">
                       {service.description}
                     </p>
                   </div>
 
-                  <div>
-                    <ul className="space-y-2 mb-6 border-t border-slate-100 pt-4">
+                  <div className="relative">
+                    <ul className="space-y-3 mb-8">
                       {service.benefits.map((benefit, bIdx) => (
-                        <li
-                          key={bIdx}
-                          className="flex items-center gap-2 text-xs font-medium text-slate-500"
-                        >
-                          <CheckCircle2
-                            size={14}
-                            className="text-emerald-500 shrink-0"
-                          />
+                        <li key={bIdx} className="flex items-center gap-3 text-sm font-medium text-slate-700">
+                          <CheckCircle2 size={16} className="text-blue-600 shrink-0" />
                           {benefit}
                         </li>
                       ))}
                     </ul>
                     <a
                       href="#contact"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-600 hover:text-blue-700 transition-colors group/btn"
+                      className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors group/btn"
                     >
                       Learn More
-                      <ArrowRight
-                        size={14}
-                        className="transform group-hover/btn:translate-x-0.5 transition-transform"
-                      />
+                      <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                     </a>
                   </div>
                 </article>
@@ -293,68 +280,55 @@ export default function ServiceDetails() {
         {/* ── SECTION 2: DIGITAL MARKETING ── */}
         <section
           id="marketing"
-          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-slate-100/50 border-y border-slate-200/60 scroll-mt-10 marketing-header-trigger"
+          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 scroll-mt-10 marketing-header-trigger"
         >
-          <div className="border-b border-slate-200 pb-6 mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4 marketing-header-anim opacity-0">
+          <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6 marketing-header-anim opacity-0">
             <div>
-              <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-2">
-                Data-Driven Growth
-              </span>
-              <h2 className="text-3xl font-black text-slate-900 tracking-tight sm:text-4xl">
-                Digital Marketing
+              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/50 bg-blue-50/50 backdrop-blur px-4 py-2 mb-6">
+                <div className="h-2 w-2 rounded-full bg-blue-600" />
+                <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">Data-Driven Growth</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+                Digital <span className="text-blue-600">Marketing</span>
               </h2>
             </div>
-            <p className="text-slate-500 max-w-md text-sm md:text-base">
-              Performance marketing solutions configured precisely around
-              metrics, conversion architectures, and measurable ROAS values.
+            <p className="text-slate-600 max-w-md text-base">
+              Performance marketing solutions configured precisely around metrics, conversion architectures, and measurable ROAS values.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 marketing-cards-trigger">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 marketing-cards-trigger">
             {marketingServices.map((service, index) => (
-              /* GSAP Structural Isolation Wrapper Target */
-              <div
-                key={index}
-                className="marketing-card-wrapper opacity-0 will-change-transform"
-              >
-                {/* Independent Component Interaction Layer */}
-                <article className="h-full bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all group flex flex-col justify-between">
-                  <div>
-                    <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-5 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                      <service.icon size={20} />
+              <div key={index} className="marketing-card-wrapper opacity-0 will-change-transform">
+                <article className="h-full bg-white rounded-2xl border border-blue-100/50 p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-blue-200/80 transition-all duration-500 group flex flex-col justify-between relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-blue-100 rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600 to-blue-500 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <service.icon size={24} />
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                    <p className="text-slate-600 text-base leading-relaxed mb-8">
                       {service.description}
                     </p>
                   </div>
 
-                  <div>
-                    <ul className="space-y-2 mb-6 border-t border-slate-100 pt-4">
+                  <div className="relative">
+                    <ul className="space-y-3 mb-8">
                       {service.benefits.map((benefit, bIdx) => (
-                        <li
-                          key={bIdx}
-                          className="flex items-center gap-2 text-xs font-medium text-slate-500"
-                        >
-                          <CheckCircle2
-                            size={14}
-                            className="text-emerald-500 shrink-0"
-                          />
+                        <li key={bIdx} className="flex items-center gap-3 text-sm font-medium text-slate-700">
+                          <CheckCircle2 size={16} className="text-blue-600 shrink-0" />
                           {benefit}
                         </li>
                       ))}
                     </ul>
                     <a
                       href="#contact"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-600 hover:text-blue-700 transition-colors group/btn"
+                      className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors group/btn"
                     >
                       Learn More
-                      <ArrowRight
-                        size={14}
-                        className="transform group-hover/btn:translate-x-0.5 transition-transform"
-                      />
+                      <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                     </a>
                   </div>
                 </article>
@@ -364,19 +338,18 @@ export default function ServiceDetails() {
         </section>
 
         {/* ── CALL TO ACTION BANNER ── */}
-        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center details-cta-trigger">
-          <div className="bg-gradient-to-br from-[#060816] to-[#11163a] rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden details-cta-anim opacity-0">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/10 blur-3xl rounded-full pointer-events-none" />
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 relative z-10">
-              Ready to Launch Your Next Project?
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center details-cta-trigger">
+          <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 md:p-16 shadow-2xl relative overflow-hidden details-cta-anim opacity-0">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl -mr-48 -mt-48 pointer-events-none" />
+            <h3 className="text-3xl md:text-5xl font-bold text-white mb-6 relative z-10 leading-tight">
+              Ready to Transform Your <span className="text-blue-100">Business?</span>
             </h3>
-            <p className="text-slate-400 text-sm md:text-base max-w-xl mx-auto mb-8 relative z-10">
-              Get in touch with our tech consulting group today for a structured
-              breakdown on optimization strategy options.
+            <p className="text-blue-50 text-lg max-w-2xl mx-auto mb-10 relative z-10">
+              Get in touch with our tech consulting team today for a structured breakdown on optimization strategy options tailored to your goals.
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition-all shadow-md active:scale-98 relative z-10"
+              className="inline-flex items-center justify-center bg-white text-blue-700 font-bold text-base px-8 py-4 rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-2xl active:scale-95 relative z-10"
             >
               Get Started Now
             </a>
