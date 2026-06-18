@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { gsap } from "gsap";
 import { StaticImageData } from "next/image";
 
@@ -39,7 +39,7 @@ export default function PageBanner({
 
   return (
     <section
-      className="relative py-24 lg:py-32 overflow-hidden bg-cover bg-center"
+      className="relative mt-8 py-24 lg:py-32 overflow-hidden bg-cover bg-center"
       style={{
         backgroundImage: bgImageUrl ? `url(${bgImageUrl})` : "none",
         backgroundColor: bgImageUrl ? "transparent" : "#060816",

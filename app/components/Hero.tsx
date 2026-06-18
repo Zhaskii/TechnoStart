@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { StaticImageData } from "next/image";
 import { Globe, Search, TrendingUp } from "lucide-react";

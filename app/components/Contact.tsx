@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2 } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PageBanner from "./PageBanner";
-import contactBG from "@/app/assets/contact.png";
+import contactBG from "@/app/assets/kantact.png";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
