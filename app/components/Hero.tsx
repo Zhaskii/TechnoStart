@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { StaticImageData } from "next/image";
+import { Globe, Search, TrendingUp } from "lucide-react";
 
 const SERVICES = ["Web Development", "SEO", "Google Ads", "Social Media"];
 
@@ -155,8 +156,8 @@ export default function Hero({ bgImage, bgOverlayOpacity = 0.6 }: HeroProps) {
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-4 rounded-2xl border border-white/5 bg-white/5 p-5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-xl">
-                      🌐
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
+                      <Globe size={22} strokeWidth={2} />
                     </div>
                     <div>
                       <h4 className="font-semibold">Web Development</h4>
@@ -167,8 +168,8 @@ export default function Hero({ bgImage, bgOverlayOpacity = 0.6 }: HeroProps) {
                   </div>
 
                   <div className="flex items-start gap-4 rounded-2xl border border-white/5 bg-white/5 p-5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-xl">
-                      🔍
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
+                      <Search size={22} strokeWidth={2} />
                     </div>
                     <div>
                       <h4 className="font-semibold">SEO Optimization</h4>
@@ -179,8 +180,8 @@ export default function Hero({ bgImage, bgOverlayOpacity = 0.6 }: HeroProps) {
                   </div>
 
                   <div className="flex items-start gap-4 rounded-2xl border border-white/5 bg-white/5 p-5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-xl">
-                      📈
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
+                      <TrendingUp size={22} strokeWidth={2} />
                     </div>
                     <div>
                       <h4 className="font-semibold">Digital Marketing</h4>
