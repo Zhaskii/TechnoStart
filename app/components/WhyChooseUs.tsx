@@ -162,30 +162,6 @@ export const WhyChooseUs: React.FC = () => {
             </div>
           ))}
         </div>
-
-        {/* Bottom Trust Banner */}
-        <div className="mt-20 rounded-3xl border border-blue-100 bg-gradient-to-r from-blue-50 to-white p-10 lg:p-14 choose-banner-trigger choose-banner-anim opacity-0">
-          <div className="flex flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left">
-            <div>
-              <h3 className="text-3xl font-bold text-slate-900">
-                Your Success Is Our Priority
-              </h3>
-
-              <p className="mt-3 max-w-2xl text-slate-600">
-                We don't just build websites or run marketing campaigns. We
-                create digital experiences that help businesses attract, engage,
-                and convert customers.
-              </p>
-            </div>
-
-            <a
-              href="#contact"
-              className="inline-flex items-center rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-blue-700 shrink-0"
-            >
-              Get Started
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

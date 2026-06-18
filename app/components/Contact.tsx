@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2 } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PageBanner from "./PageBanner";
-import contactBG from "@/app/assets/contactBG.jpg";
+import contactBG from "@/app/assets/contact.png";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -423,8 +423,7 @@ export default function Contact() {
                   Google Maps Interactive Engine Location
                 </p>
                 <p className="text-xs text-slate-400 max-w-xs mt-1 relative z-10">
-                  Embed an active `&lt;iframe&gt;` link here to generate
-                  customized geographical direction routers for visitors.
+                  iframe
                 </p>
               </div>
             </div>

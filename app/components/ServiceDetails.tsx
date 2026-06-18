@@ -17,7 +17,7 @@ import {
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PageBanner from "./PageBanner";
-import servicesBG from "@/app/assets/servicesBG.avif";
+import servicesBG from "@/app/assets/servicesBG.png";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
