@@ -194,7 +194,7 @@ export default function Contact() {
                   <div className="flex gap-3">
                     {/* LinkedIn SVG */}
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/"
                       aria-label="LinkedIn"
                       className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:bg-blue-50 hover:border-blue-200 transition-all active:scale-95"
                     >
@@ -217,7 +217,7 @@ export default function Contact() {
 
                     {/* Twitter / X SVG */}
                     <a
-                      href="#"
+                      href="https://www.x.com/"
                       aria-label="Twitter"
                       className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:bg-blue-50 hover:border-blue-200 transition-all active:scale-95"
                     >
@@ -238,7 +238,7 @@ export default function Contact() {
 
                     {/* Facebook SVG */}
                     <a
-                      href="#"
+                      href="https://www.facebook.com/"
                       aria-label="Facebook"
                       className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:bg-blue-50 hover:border-blue-200 transition-all active:scale-95"
                     >
