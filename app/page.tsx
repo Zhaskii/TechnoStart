@@ -6,7 +6,7 @@ import { WhyChooseUs } from "./components/WhyChooseUs";
 import { ImpactStats } from "./components/ImpactStats";
 import { Testimonials } from "./components/Testimonials";
 import { CTA } from "./components/CTA";
-import heroBG from "@/app/assets/heroBG.png";
+import heroBG from "@/app/assets/heroBG.jpg";
 
 export default function Home() {
   return (
