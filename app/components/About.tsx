@@ -60,21 +60,21 @@ const timeline = [
 
 const team = [
   {
-    initials: "AS",
-    name: "Asha Singh",
-    role: "CEO & Founder",
+    initials: "PS",
+    name: "Prasant Subedi",
+    role: "CEO",
     color: "bg-blue-600",
   },
   {
-    initials: "RK",
-    name: "Rohit Kumar",
-    role: "Head of Development",
+    initials: "SB",
+    name: "Saishab Bhattarai",
+    role: "Project Lead",
     color: "bg-indigo-500",
   },
   {
-    initials: "ML",
-    name: "Maria Lopez",
-    role: "Head of Marketing",
+    initials: "KS",
+    name: "Kunal Shrestha",
+    role: "Software Engineer",
     color: "bg-blue-500",
   },
 ];

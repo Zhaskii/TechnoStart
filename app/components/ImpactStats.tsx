@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { Globe, BarChart3, Users, Trophy } from "lucide-react";
+import { Globe, BarChart3, Users } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,10 +9,9 @@ if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
 // ─── Data ─────────────────────────────────────────────────────
 const STATS = [
-  { value: "120+", label: "Websites Delivered", icon: Globe },
-  { value: "85", label: "Active Campaigns", icon: BarChart3 },
+  { value: "25+", label: "Websites Delivered", icon: Globe },
+  { value: "100+", label: "Active Campaigns", icon: BarChart3 },
   { value: "50+", label: "Satisfied Clients", icon: Users },
-  { value: "15", label: "Awards & Recognitions", icon: Trophy },
 ];
 
 // ─── Component ────────────────────────────────────────────────
@@ -93,7 +92,7 @@ export const ImpactStats: React.FC = () => {
         </div>
 
         {/* ── Stats Grid ── */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 stats-grid-trigger">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 stats-grid-trigger">
           {STATS.map(({ value, label, icon: Icon }) => (
             <div
               key={label}

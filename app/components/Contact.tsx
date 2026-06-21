@@ -149,7 +149,7 @@ export default function Contact() {
                       </h4>
                       <p className="text-slate-800 font-medium hover:text-blue-600 transition-colors">
                         <a href="mailto:info@technostart.com">
-                          info@technostart.com
+                          technostar@gmail.com
                         </a>
                       </p>
                     </div>
@@ -164,7 +164,7 @@ export default function Contact() {
                         Phone
                       </h4>
                       <p className="text-slate-800 font-medium hover:text-blue-600 transition-colors">
-                        <a href="tel:+15550100">+1 555 0100</a>
+                        <a href="tel:+9779803100213">+977 9803100213</a>
                       </p>
                     </div>
                   </div>
@@ -178,7 +178,7 @@ export default function Contact() {
                         Address
                       </h4>
                       <p className="text-slate-600 leading-relaxed font-medium">
-                        123 Business Ave, City, Country
+                        New Baneshwor, Kathmandu, Nepal
                       </p>
                     </div>
                   </div>
@@ -416,18 +416,27 @@ export default function Contact() {
               </h3>
 
               {/* Map Box Container */}
-              <div className="w-full h-80 sm:h-96 bg-slate-100 rounded-2xl overflow-hidden border border-slate-200/60 relative flex flex-col justify-center items-center text-center p-4">
+              <div className="w-full h-80 sm:h-96 bg-slate-100 rounded-2xl overflow-hidden border border-slate-200/60 relative flex flex-col justify-center items-center text-center">
                 <div className="absolute inset-0 opacity-40 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-size-[3rem_3rem]" />
-                <MapPin
-                  size={36}
-                  className="text-blue-600 animate-bounce mb-3 relative z-10"
-                />
-                <p className="text-slate-600 font-semibold relative z-10">
-                  Google Maps Interactive Engine Location
-                </p>
-                <p className="text-xs text-slate-400 max-w-xs mt-1 relative z-10">
-                  iframe
-                </p>
+
+                {/* Fallback visual state hidden underneath layout if map loads slow */}
+                <div className="pointer-events-none flex flex-col items-center p-4">
+                  <MapPin
+                    size={36}
+                    className="text-blue-600 animate-bounce mb-3 relative z-0"
+                  />
+                  <p className="text-slate-600 font-semibold relative z-0">
+                    Google Maps Interactive Engine Location
+                  </p>
+                </div>
+
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15363.700564574709!2d85.32951860874424!3d27.694703218550295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb199a06c2eaf9%3A0xc5670a9173e161de!2sNew%20Baneshwor%2C%20Kathmandu%2044600!5e1!3m2!1sen!2snp!4v1782020850697!5m2!1sen!2snp"
+                  className="absolute inset-0 w-full h-full border-0 z-10"
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </div>
