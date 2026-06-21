@@ -52,7 +52,7 @@ export default function Hero({ bgImage, bgOverlayOpacity = 0.6 }: HeroProps) {
       style={{
         backgroundImage: bgImageUrl ? `url(${bgImageUrl})` : "none",
         backgroundColor: bgImageUrl ? "transparent" : "#0D0D0D",
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
